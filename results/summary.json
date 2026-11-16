@@ -1,0 +1,816 @@
+{
+  "mode": "quick",
+  "cloud_model": "nvidia/nemotron-3-ultra-550b-a55b",
+  "model_labels": {
+    "local": "Local only\nGemma 4 E2B (LiteRT-LM, Metal)",
+    "cloud": "Cloud only\nNemotron-3-Ultra (OpenRouter)",
+    "hybrid": "Hybrid\nLaya router -> local/cloud"
+  },
+  "host": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "Apple M2",
+    "cpu_count_physical": 8,
+    "cpu_count_logical": 8,
+    "total_ram_gb": 16.0,
+    "python": "3.14.6"
+  },
+  "local_model_dir_mb": 4494.5,
+  "rss_mb_at_end": 923.0,
+  "total_items": 46,
+  "per_task": {
+    "arc_challenge": {
+      "n": 7,
+      "n_incomplete": 0,
+      "local": {
+        "n": 7,
+        "correct": 5,
+        "accuracy": 0.7143,
+        "accuracy_ci95": [
+          0.3589,
+          0.9178
+        ]
+      },
+      "cloud": {
+        "n": 7,
+        "correct": 7,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6457,
+          1.0
+        ]
+      },
+      "hybrid": {
+        "n": 7,
+        "correct": 7,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6457,
+          1.0
+        ]
+      },
+      "oracle": {
+        "n": 7,
+        "correct": 7,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6457,
+          1.0
+        ]
+      },
+      "routes": {
+        "cloud": 7
+      },
+      "route_fraction": {
+        "cloud": 1.0
+      },
+      "latency_ms": {
+        "local": {
+          "n": 7,
+          "mean": 1063.867,
+          "median": 954.0,
+          "p90": 1654.48,
+          "min": 660.62,
+          "max": 1654.48,
+          "stdev": 362.162
+        },
+        "cloud": {
+          "n": 7,
+          "mean": 1658.183,
+          "median": 890.39,
+          "p90": 6228.03,
+          "min": 610.71,
+          "max": 6228.03,
+          "stdev": 2029.934
+        },
+        "hybrid": {
+          "n": 7,
+          "mean": 6242.114,
+          "median": 4860.83,
+          "p90": 12397.56,
+          "min": 3062.18,
+          "max": 12397.56,
+          "stdev": 3788.792
+        },
+        "decision": {
+          "n": 7,
+          "mean": 4583.931,
+          "median": 3552.18,
+          "p90": 10079.67,
+          "min": 2412.01,
+          "max": 10079.67,
+          "stdev": 2743.933
+        }
+      },
+      "tok_per_s": {
+        "local": {
+          "n": 7,
+          "mean": 11.317,
+          "median": 11.53,
+          "p90": 16.651,
+          "min": 6.649,
+          "max": 16.651,
+          "stdev": 3.476
+        },
+        "cloud": {
+          "n": 7,
+          "mean": 2.101,
+          "median": 2.246,
+          "p90": 3.275,
+          "min": 0.321,
+          "max": 3.275,
+          "stdev": 1.003
+        }
+      },
+      "cloud_output_tokens_total": 14
+    },
+    "boolq": {
+      "n": 7,
+      "n_incomplete": 0,
+      "local": {
+        "n": 7,
+        "correct": 5,
+        "accuracy": 0.7143,
+        "accuracy_ci95": [
+          0.3589,
+          0.9178
+        ]
+      },
+      "cloud": {
+        "n": 7,
+        "correct": 6,
+        "accuracy": 0.8571,
+        "accuracy_ci95": [
+          0.4869,
+          0.9743
+        ]
+      },
+      "hybrid": {
+        "n": 7,
+        "correct": 6,
+        "accuracy": 0.8571,
+        "accuracy_ci95": [
+          0.4869,
+          0.9743
+        ]
+      },
+      "oracle": {
+        "n": 7,
+        "correct": 6,
+        "accuracy": 0.8571,
+        "accuracy_ci95": [
+          0.4869,
+          0.9743
+        ]
+      },
+      "routes": {
+        "cloud": 7
+      },
+      "route_fraction": {
+        "cloud": 1.0
+      },
+      "latency_ms": {
+        "local": {
+          "n": 7,
+          "mean": 2236.279,
+          "median": 1641.26,
+          "p90": 4870.77,
+          "min": 869.12,
+          "max": 4870.77,
+          "stdev": 1458.626
+        },
+        "cloud": {
+          "n": 7,
+          "mean": 2256.54,
+          "median": 1429.33,
+          "p90": 7813.06,
+          "min": 978.39,
+          "max": 7813.06,
+          "stdev": 2471.452
+        },
+        "hybrid": {
+          "n": 7,
+          "mean": 6381.63,
+          "median": 5720.94,
+          "p90": 11699.9,
+          "min": 2899.85,
+          "max": 11699.9,
+          "stdev": 3530.731
+        },
+        "decision": {
+          "n": 7,
+          "mean": 4125.09,
+          "median": 3886.84,
+          "p90": 9436.16,
+          "min": 1921.46,
+          "max": 9436.16,
+          "stdev": 2538.123
+        }
+      },
+      "tok_per_s": {
+        "local": {
+          "n": 7,
+          "mean": 6.733,
+          "median": 6.702,
+          "p90": 12.656,
+          "min": 2.258,
+          "max": 12.656,
+          "stdev": 3.635
+        },
+        "cloud": {
+          "n": 7,
+          "mean": 1.401,
+          "median": 1.399,
+          "p90": 2.044,
+          "min": 0.256,
+          "max": 2.044,
+          "stdev": 0.625
+        }
+      },
+      "cloud_output_tokens_total": 14
+    },
+    "gsm8k": {
+      "n": 8,
+      "n_incomplete": 0,
+      "local": {
+        "n": 8,
+        "correct": 2,
+        "accuracy": 0.25,
+        "accuracy_ci95": [
+          0.0715,
+          0.5907
+        ]
+      },
+      "cloud": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "hybrid": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "oracle": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "routes": {
+        "cloud": 8
+      },
+      "route_fraction": {
+        "cloud": 1.0
+      },
+      "latency_ms": {
+        "local": {
+          "n": 8,
+          "mean": 15532.906,
+          "median": 16375.875,
+          "p90": 23855.61,
+          "min": 7895.87,
+          "max": 23855.61,
+          "stdev": 5093.271
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 3409.28,
+          "median": 3112.875,
+          "p90": 5816.45,
+          "min": 1998.69,
+          "max": 5816.45,
+          "stdev": 1344.308
+        },
+        "hybrid": {
+          "n": 8,
+          "mean": 5963.858,
+          "median": 6346.445,
+          "p90": 7838.83,
+          "min": 3417.56,
+          "max": 7838.83,
+          "stdev": 1431.367
+        },
+        "decision": {
+          "n": 8,
+          "mean": 2554.577,
+          "median": 2265.785,
+          "p90": 3863.88,
+          "min": 999.91,
+          "max": 3863.88,
+          "stdev": 986.546
+        }
+      },
+      "tok_per_s": {
+        "local": {
+          "n": 8,
+          "mean": 15.512,
+          "median": 14.895,
+          "p90": 22.417,
+          "min": 11.108,
+          "max": 22.417,
+          "stdev": 3.216
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 32.157,
+          "median": 32.777,
+          "p90": 52.99,
+          "min": 17.122,
+          "max": 52.99,
+          "stdev": 12.525
+        }
+      },
+      "cloud_output_tokens_total": 797
+    },
+    "humaneval": {
+      "n": 8,
+      "n_incomplete": 0,
+      "local": {
+        "n": 8,
+        "correct": 6,
+        "accuracy": 0.75,
+        "accuracy_ci95": [
+          0.4093,
+          0.9285
+        ]
+      },
+      "cloud": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "hybrid": {
+        "n": 8,
+        "correct": 7,
+        "accuracy": 0.875,
+        "accuracy_ci95": [
+          0.5291,
+          0.9776
+        ]
+      },
+      "oracle": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "routes": {
+        "local": 5,
+        "cloud": 3
+      },
+      "route_fraction": {
+        "local": 0.625,
+        "cloud": 0.375
+      },
+      "latency_ms": {
+        "local": {
+          "n": 8,
+          "mean": 13800.097,
+          "median": 12434.875,
+          "p90": 20823.93,
+          "min": 8869.01,
+          "max": 20823.93,
+          "stdev": 4401.516
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 8915.555,
+          "median": 4120.935,
+          "p90": 45356.26,
+          "min": 2580.43,
+          "max": 45356.26,
+          "stdev": 14749.475
+        },
+        "hybrid": {
+          "n": 8,
+          "mean": 11833.205,
+          "median": 11355.34,
+          "p90": 22469.74,
+          "min": 5180.93,
+          "max": 22469.74,
+          "stdev": 6010.181
+        },
+        "decision": {
+          "n": 8,
+          "mean": 1490.47,
+          "median": 1496.93,
+          "p90": 2237.95,
+          "min": 737.3,
+          "max": 2237.95,
+          "stdev": 412.675
+        }
+      },
+      "tok_per_s": {
+        "local": {
+          "n": 8,
+          "mean": 19.021,
+          "median": 18.902,
+          "p90": 23.143,
+          "min": 14.883,
+          "max": 23.143,
+          "stdev": 2.596
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 41.782,
+          "median": 44.584,
+          "p90": 64.207,
+          "min": 2.139,
+          "max": 64.207,
+          "stdev": 18.065
+        }
+      },
+      "cloud_output_tokens_total": 1313
+    },
+    "mbpp": {
+      "n": 8,
+      "n_incomplete": 0,
+      "local": {
+        "n": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "accuracy_ci95": [
+          0.2152,
+          0.7848
+        ]
+      },
+      "cloud": {
+        "n": 8,
+        "correct": 2,
+        "accuracy": 0.25,
+        "accuracy_ci95": [
+          0.0715,
+          0.5907
+        ]
+      },
+      "hybrid": {
+        "n": 8,
+        "correct": 2,
+        "accuracy": 0.25,
+        "accuracy_ci95": [
+          0.0715,
+          0.5907
+        ]
+      },
+      "oracle": {
+        "n": 8,
+        "correct": 4,
+        "accuracy": 0.5,
+        "accuracy_ci95": [
+          0.2152,
+          0.7848
+        ]
+      },
+      "routes": {
+        "cloud": 8
+      },
+      "route_fraction": {
+        "cloud": 1.0
+      },
+      "latency_ms": {
+        "local": {
+          "n": 8,
+          "mean": 23053.885,
+          "median": 23768.175,
+          "p90": 28460.37,
+          "min": 18522.82,
+          "max": 28460.37,
+          "stdev": 3223.275
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 3893.679,
+          "median": 2615.39,
+          "p90": 12703.62,
+          "min": 1042.28,
+          "max": 12703.62,
+          "stdev": 3803.562
+        },
+        "hybrid": {
+          "n": 8,
+          "mean": 7198.925,
+          "median": 5230.58,
+          "p90": 15804.52,
+          "min": 3878.58,
+          "max": 15804.52,
+          "stdev": 4346.155
+        },
+        "decision": {
+          "n": 8,
+          "mean": 3305.246,
+          "median": 2715.02,
+          "p90": 7160.53,
+          "min": 1934.37,
+          "max": 7160.53,
+          "stdev": 1730.19
+        }
+      },
+      "tok_per_s": {
+        "local": {
+          "n": 8,
+          "mean": 15.384,
+          "median": 15.682,
+          "p90": 19.806,
+          "min": 9.241,
+          "max": 19.806,
+          "stdev": 2.929
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 21.989,
+          "median": 21.19,
+          "p90": 40.966,
+          "min": 4.023,
+          "max": 40.966,
+          "stdev": 14.916
+        }
+      },
+      "cloud_output_tokens_total": 513
+    },
+    "mmlu": {
+      "n": 8,
+      "n_incomplete": 0,
+      "local": {
+        "n": 8,
+        "correct": 5,
+        "accuracy": 0.625,
+        "accuracy_ci95": [
+          0.3057,
+          0.8632
+        ]
+      },
+      "cloud": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "hybrid": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "oracle": {
+        "n": 8,
+        "correct": 8,
+        "accuracy": 1.0,
+        "accuracy_ci95": [
+          0.6756,
+          1.0
+        ]
+      },
+      "routes": {
+        "cloud": 8
+      },
+      "route_fraction": {
+        "cloud": 1.0
+      },
+      "latency_ms": {
+        "local": {
+          "n": 8,
+          "mean": 1741.827,
+          "median": 1961.635,
+          "p90": 2459.59,
+          "min": 775.52,
+          "max": 2459.59,
+          "stdev": 708.147
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 3524.091,
+          "median": 1251.285,
+          "p90": 17542.42,
+          "min": 944.32,
+          "max": 17542.42,
+          "stdev": 5717.772
+        },
+        "hybrid": {
+          "n": 8,
+          "mean": 8058.441,
+          "median": 3959.315,
+          "p90": 34350.12,
+          "min": 3193.49,
+          "max": 34350.12,
+          "stdev": 10693.181
+        },
+        "decision": {
+          "n": 8,
+          "mean": 4534.35,
+          "median": 2762.53,
+          "p90": 16807.7,
+          "min": 1961.03,
+          "max": 16807.7,
+          "stdev": 5024.079
+        }
+      },
+      "tok_per_s": {
+        "local": {
+          "n": 8,
+          "mean": 7.629,
+          "median": 5.747,
+          "p90": 14.184,
+          "min": 4.472,
+          "max": 14.184,
+          "stdev": 3.811
+        },
+        "cloud": {
+          "n": 8,
+          "mean": 1.354,
+          "median": 1.599,
+          "p90": 2.118,
+          "min": 0.114,
+          "max": 2.118,
+          "stdev": 0.672
+        }
+      },
+      "cloud_output_tokens_total": 16
+    }
+  },
+  "comparisons": [
+    {
+      "task": "arc_challenge",
+      "n": 7,
+      "hybrid_vs_local": {
+        "hybrid_only_correct": 2,
+        "local_only_correct": 0,
+        "p_value": 0.5
+      },
+      "cloud_vs_local": {
+        "cloud_only_correct": 2,
+        "local_only_correct": 0,
+        "p_value": 0.5
+      }
+    },
+    {
+      "task": "boolq",
+      "n": 7,
+      "hybrid_vs_local": {
+        "hybrid_only_correct": 1,
+        "local_only_correct": 0,
+        "p_value": 1.0
+      },
+      "cloud_vs_local": {
+        "cloud_only_correct": 1,
+        "local_only_correct": 0,
+        "p_value": 1.0
+      }
+    },
+    {
+      "task": "gsm8k",
+      "n": 8,
+      "hybrid_vs_local": {
+        "hybrid_only_correct": 6,
+        "local_only_correct": 0,
+        "p_value": 0.03125
+      },
+      "cloud_vs_local": {
+        "cloud_only_correct": 6,
+        "local_only_correct": 0,
+        "p_value": 0.03125
+      }
+    },
+    {
+      "task": "humaneval",
+      "n": 8,
+      "hybrid_vs_local": {
+        "hybrid_only_correct": 1,
+        "local_only_correct": 0,
+        "p_value": 1.0
+      },
+      "cloud_vs_local": {
+        "cloud_only_correct": 2,
+        "local_only_correct": 0,
+        "p_value": 0.5
+      }
+    },
+    {
+      "task": "mbpp",
+      "n": 8,
+      "hybrid_vs_local": {
+        "hybrid_only_correct": 0,
+        "local_only_correct": 2,
+        "p_value": 0.5
+      },
+      "cloud_vs_local": {
+        "cloud_only_correct": 0,
+        "local_only_correct": 2,
+        "p_value": 0.5
+      }
+    },
+    {
+      "task": "mmlu",
+      "n": 8,
+      "hybrid_vs_local": {
+        "hybrid_only_correct": 3,
+        "local_only_correct": 0,
+        "p_value": 0.25
+      },
+      "cloud_vs_local": {
+        "cloud_only_correct": 3,
+        "local_only_correct": 0,
+        "p_value": 0.25
+      }
+    }
+  ],
+  "router": {
+    "arc_challenge": {
+      "n": 7,
+      "n_disagreements": 2,
+      "disagreement_rate": 0.2857,
+      "hybrid_accuracy": 1.0,
+      "oracle_accuracy": 1.0,
+      "local_accuracy": 0.7143,
+      "cloud_accuracy": 1.0,
+      "oracle_gap_captured": 1.0,
+      "router_vs_cloud": 0.0
+    },
+    "boolq": {
+      "n": 7,
+      "n_disagreements": 1,
+      "disagreement_rate": 0.1429,
+      "hybrid_accuracy": 0.8571,
+      "oracle_accuracy": 0.8571,
+      "local_accuracy": 0.7143,
+      "cloud_accuracy": 0.8571,
+      "oracle_gap_captured": 1.0,
+      "router_vs_cloud": 0.0
+    },
+    "gsm8k": {
+      "n": 8,
+      "n_disagreements": 6,
+      "disagreement_rate": 0.75,
+      "hybrid_accuracy": 1.0,
+      "oracle_accuracy": 1.0,
+      "local_accuracy": 0.25,
+      "cloud_accuracy": 1.0,
+      "oracle_gap_captured": 1.0,
+      "router_vs_cloud": 0.0
+    },
+    "humaneval": {
+      "n": 8,
+      "n_disagreements": 2,
+      "disagreement_rate": 0.25,
+      "hybrid_accuracy": 0.875,
+      "oracle_accuracy": 1.0,
+      "local_accuracy": 0.75,
+      "cloud_accuracy": 1.0,
+      "oracle_gap_captured": 0.5,
+      "router_vs_cloud": -0.125
+    },
+    "mbpp": {
+      "n": 8,
+      "n_disagreements": 2,
+      "disagreement_rate": 0.25,
+      "hybrid_accuracy": 0.25,
+      "oracle_accuracy": 0.5,
+      "local_accuracy": 0.5,
+      "cloud_accuracy": 0.25,
+      "oracle_gap_captured": null,
+      "router_vs_cloud": 0.0
+    },
+    "mmlu": {
+      "n": 8,
+      "n_disagreements": 3,
+      "disagreement_rate": 0.375,
+      "hybrid_accuracy": 1.0,
+      "oracle_accuracy": 1.0,
+      "local_accuracy": 0.625,
+      "cloud_accuracy": 1.0,
+      "oracle_gap_captured": 1.0,
+      "router_vs_cloud": 0.0
+    }
+  },
+  "last_run": {
+    "items_completed": 0,
+    "api_calls_made": 0,
+    "items_skipped_existing": 46,
+    "budget": 1000000000,
+    "peak_rss_mb": 916.8
+  }
+}

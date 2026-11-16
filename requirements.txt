@@ -1,0 +1,14 @@
+laya>=0.4.31
+litert-lm>=0.19.1
+openai>=3.49.0
+fastapi>=0.163.1
+uvicorn>=0.54.0
+
+# benchmark
+pandas>=3.1.1
+pyarrow>=26.0.1
+matplotlib>=3.11.2
+psutil>=7.2.2
+nbformat>=5.10
+nbclient>=0.10
+ipykernel>=6.30

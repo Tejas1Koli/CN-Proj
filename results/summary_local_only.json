@@ -1,0 +1,282 @@
+{
+  "mode": "quick",
+  "cloud_model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "model_labels": {
+    "local": "Local only\nGemma 4 E2B (LiteRT-LM, Metal)",
+    "cloud": "Cloud only\nNemotron-3-Ultra (OpenRouter)",
+    "hybrid": "Hybrid\nLaya router -> local/cloud"
+  },
+  "host": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "Apple M2",
+    "cpu_count_physical": 8,
+    "cpu_count_logical": 8,
+    "total_ram_gb": 16.0,
+    "python": "3.14.6"
+  },
+  "local_model_dir_mb": 4494.5,
+  "rss_mb_at_end": 820.0,
+  "cells": {
+    "local|arc_challenge": {
+      "system": "local",
+      "task": "arc_challenge",
+      "n": 60,
+      "n_errors": 0,
+      "correct": 22,
+      "accuracy": 0.3667,
+      "accuracy_ci95": [
+        0.2562,
+        0.4932
+      ],
+      "latency_ms": {
+        "n": 60,
+        "mean": 592.257,
+        "median": 556.305,
+        "p90": 806.41,
+        "min": 362.48,
+        "max": 843.92,
+        "stdev": 144.795
+      },
+      "ttft_ms": {
+        "n": 60,
+        "mean": 406.798,
+        "median": 367.315,
+        "p90": 474.62,
+        "min": 354.52,
+        "max": 499.15,
+        "stdev": 52.923
+      },
+      "output_tok_per_s": {
+        "n": 60,
+        "mean": 31.746,
+        "median": 31.655,
+        "p90": 34.75,
+        "min": 23.85,
+        "max": 35.78,
+        "stdev": 2.523
+      },
+      "total_cost_usd": 0.0,
+      "routes": {
+        "local": 60
+      }
+    },
+    "local|boolq": {
+      "system": "local",
+      "task": "boolq",
+      "n": 60,
+      "n_errors": 0,
+      "correct": 47,
+      "accuracy": 0.7833,
+      "accuracy_ci95": [
+        0.6638,
+        0.8688
+      ],
+      "latency_ms": {
+        "n": 60,
+        "mean": 886.973,
+        "median": 955.635,
+        "p90": 1041.82,
+        "min": 483.47,
+        "max": 1163.97,
+        "stdev": 197.783
+      },
+      "ttft_ms": {
+        "n": 60,
+        "mean": 884.456,
+        "median": 955.595,
+        "p90": 1033.49,
+        "min": 483.44,
+        "max": 1163.93,
+        "stdev": 195.349
+      },
+      "output_tok_per_s": {
+        "n": 60,
+        "mean": 13.426,
+        "median": 11.525,
+        "p90": 22.1,
+        "min": 9.45,
+        "max": 22.75,
+        "stdev": 4.286
+      },
+      "total_cost_usd": 0.0,
+      "routes": {
+        "local": 60
+      }
+    },
+    "local|gsm8k": {
+      "system": "local",
+      "task": "gsm8k",
+      "n": 40,
+      "n_errors": 0,
+      "correct": 20,
+      "accuracy": 0.5,
+      "accuracy_ci95": [
+        0.352,
+        0.648
+      ],
+      "latency_ms": {
+        "n": 40,
+        "mean": 5039.025,
+        "median": 5167.995,
+        "p90": 6246.19,
+        "min": 2136.72,
+        "max": 6290.83,
+        "stdev": 1169.648
+      },
+      "ttft_ms": {
+        "n": 40,
+        "mean": 831.161,
+        "median": 797.77,
+        "p90": 874.35,
+        "min": 766.93,
+        "max": 1684.18,
+        "stdev": 142.542
+      },
+      "output_tok_per_s": {
+        "n": 40,
+        "mean": 40.795,
+        "median": 41.805,
+        "p90": 43.15,
+        "min": 25.06,
+        "max": 43.86,
+        "stdev": 3.33
+      },
+      "total_cost_usd": 0.0,
+      "routes": {
+        "local": 40
+      }
+    },
+    "local|humaneval": {
+      "system": "local",
+      "task": "humaneval",
+      "n": 40,
+      "n_errors": 0,
+      "correct": 28,
+      "accuracy": 0.7,
+      "accuracy_ci95": [
+        0.5457,
+        0.8193
+      ],
+      "latency_ms": {
+        "n": 40,
+        "mean": 5650.41,
+        "median": 5397.605,
+        "p90": 8668.88,
+        "min": 1082.48,
+        "max": 10079.93,
+        "stdev": 2286.642
+      },
+      "ttft_ms": {
+        "n": 40,
+        "mean": 247.812,
+        "median": 231.785,
+        "p90": 364.07,
+        "min": 124.59,
+        "max": 995.81,
+        "stdev": 140.79
+      },
+      "output_tok_per_s": {
+        "n": 40,
+        "mean": 47.075,
+        "median": 50.74,
+        "p90": 53.51,
+        "min": 28.16,
+        "max": 56.35,
+        "stdev": 6.552
+      },
+      "total_cost_usd": 0.0,
+      "routes": {
+        "local": 40
+      }
+    },
+    "local|mbpp": {
+      "system": "local",
+      "task": "mbpp",
+      "n": 40,
+      "n_errors": 0,
+      "correct": 2,
+      "accuracy": 0.05,
+      "accuracy_ci95": [
+        0.0138,
+        0.165
+      ],
+      "latency_ms": {
+        "n": 40,
+        "mean": 9339.956,
+        "median": 8764.94,
+        "p90": 13119.41,
+        "min": 6224.94,
+        "max": 13851.76,
+        "stdev": 1838.565
+      },
+      "ttft_ms": {
+        "n": 40,
+        "mean": 835.732,
+        "median": 778.57,
+        "p90": 1126.41,
+        "min": 710.52,
+        "max": 1285.21,
+        "stdev": 158.126
+      },
+      "output_tok_per_s": {
+        "n": 40,
+        "mean": 42.902,
+        "median": 44.84,
+        "p90": 48.58,
+        "min": 28.37,
+        "max": 48.78,
+        "stdev": 6.44
+      },
+      "total_cost_usd": 0.0,
+      "routes": {
+        "local": 40
+      }
+    },
+    "local|mmlu": {
+      "system": "local",
+      "task": "mmlu",
+      "n": 60,
+      "n_errors": 0,
+      "correct": 1,
+      "accuracy": 0.0167,
+      "accuracy_ci95": [
+        0.0029,
+        0.0886
+      ],
+      "latency_ms": {
+        "n": 60,
+        "mean": 959.657,
+        "median": 724.38,
+        "p90": 1331.8,
+        "min": 318.67,
+        "max": 2957.9,
+        "stdev": 450.208
+      },
+      "ttft_ms": {
+        "n": 60,
+        "mean": 681.422,
+        "median": 436.905,
+        "p90": 1061.78,
+        "min": 236.05,
+        "max": 2637.63,
+        "stdev": 430.916
+      },
+      "output_tok_per_s": {
+        "n": 60,
+        "mean": 29.171,
+        "median": 33.11,
+        "p90": 40.82,
+        "min": 8.45,
+        "max": 47.07,
+        "stdev": 9.357
+      },
+      "total_cost_usd": 0.0,
+      "routes": {
+        "local": 60
+      }
+    }
+  },
+  "comparisons": [],
+  "oracle": {}
+}

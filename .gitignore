@@ -1,0 +1,19 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# LaTeX build artefacts (main.pdf is committed on purpose)
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local caches
+.pytest_cache/
+.ruff_cache/
