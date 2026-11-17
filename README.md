@@ -122,24 +122,44 @@ jupyter lab benchmark.ipynb
 
 ## Headline results (46 paired items)
 
-| Arm | Accuracy | Wall clock | Output tokens |
+| Arm | Accuracy | Wall clock | Output tokens (text) |
 |---|---|---|---|
-| Local only | 58.7% | 456.1 s | 6,997 |
-| Cloud only | 84.8% | 185.3 s | 2,667 |
-| Hybrid | 82.6% | 352.8 s | 3,262 |
-| Oracle (perfect router) | 89.1% | — | — |
+| Local only | 58.7% | 456.1 s | 6,556 |
+| Cloud only | 95.7% | 185.3 s | 2,818 |
+| Hybrid | 93.5% | 352.8 s | 3,308 |
+| Oracle (perfect router) | 95.7% | — | — |
 
-* The hybrid gives up **2.2 points** to cloud-only while beating always-local by 23.9,
-  capturing **79%** of the headroom a perfect router would unlock.
-* The cloud is faster overall because it **says less** (2.62× fewer output tokens),
-  not because it decodes much faster (1.8× per token).
+Output tokens are counted by re-tokenising the stored answer text. The runtime's
+own counter reports 6,997 / 2,667 because LiteRT-LM includes ~10 chat-template
+tokens per item (`tools/recount_tokens.py`).
+
+* **The oracle equals cloud-only**, so no router could have gained accuracy on this
+  sample: the cloud's two misses were also missed on-device. Routing bought latency
+  and privacy, not correctness. The hybrid lost **2.2 points** by sending one
+  HumanEval item to the device, capturing **94.1%** of the local→oracle headroom.
+* The cloud is faster overall because it **says less** (2.33× fewer output tokens),
+  not because it decodes much faster (2.06× per token).
 * Per task the ranking reverses: **MMLU and ARC are 1.6–2.0× faster on-device**;
   **GSM8K and MBPP are 4.6–5.9× faster in the cloud**.
 * Routing is **not free**: 156.0 s of the hybrid's 352.8 s (44%) is router time.
   A decision costs 3.1 s in the request path vs 0.36 s on an idle GPU, because the
   router shares the accelerator with the local model (`tools/measure_router.py`).
-* Difficulty is the wrong routing signal. MBPP is where local was both **faster and
-  more accurate**, and the router sent every item to the cloud.
+* Speed tracks **expected output length**, not difficulty: on MMLU/ARC/BoolQ both
+  arms emit one token and the device wins on prefill; on MBPP the local model writes
+  254 tokens where the cloud writes 21 and loses 5.9×.
+
+Two measurement defects found after the first run are corrected here, both from
+stored text with no new API calls:
+
+* **Code scorer join bug.** The extracted program was concatenated straight onto
+  the test assertions, so a completion not ending in a newline became
+  `return xassert ...` and raised `SyntaxError`. MBPP cloud accuracy was recorded
+  as 2/8; it is 7/8. This inverted the earlier claim that the router ignored a task
+  where the local model was better. Five correctness labels changed
+  (`tools/rescore.py`; the pre-fix file is kept as `raw_paired.original.jsonl`).
+* **Token counter.** `conv.token_count` includes the chat template, so a one-letter
+  answer was counted as 11 tokens, inflating both local output volume and apparent
+  throughput (`tools/recount_tokens.py`).
 
 ## Sample size and the API budget
 

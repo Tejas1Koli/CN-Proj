@@ -185,8 +185,17 @@ def score_code(text: str, item: Item) -> bool:
     else:
         candidates.append(code)
 
-    programs = [prefix + c + suffix for c in candidates]
-    programs.append(prefix + code + suffix)
+    # Join the candidate to its test harness with a newline. Without this, a
+    # completion that does not end in a newline is concatenated directly onto
+    # the first assertion ("return x" + "assert ..." -> SyntaxError), which
+    # silently marks correct programs wrong. HumanEval's suffix happens to
+    # start with a newline, so only MBPP was affected -- but the bug is in the
+    # join, not in the data.
+    if suffix and not suffix.startswith("\n"):
+        suffix = "\n" + suffix
+
+    programs = [prefix + c.rstrip() + "\n" + suffix for c in candidates]
+    programs.append(prefix + code.rstrip() + "\n" + suffix)
 
     for program in programs:
         try:

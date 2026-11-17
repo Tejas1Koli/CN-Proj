@@ -3,7 +3,7 @@
   "cloud_model": "nvidia/nemotron-3-ultra-550b-a55b",
   "model_labels": {
     "local": "Local only\nGemma 4 E2B (LiteRT-LM, Metal)",
-    "cloud": "Cloud only\nNemotron-3-Ultra (OpenRouter)",
+    "cloud": "Cloud only\nNemotron-3-Ultra (NVIDIA)",
     "hybrid": "Hybrid\nLaya router -> local/cloud"
   },
   "host": {
@@ -16,7 +16,7 @@
     "python": "3.14.6"
   },
   "local_model_dir_mb": 4494.5,
-  "rss_mb_at_end": 923.0,
+  "rss_mb_at_end": 514.6,
   "total_items": 46,
   "per_task": {
     "arc_challenge": {
@@ -122,7 +122,9 @@
           "stdev": 1.003
         }
       },
-      "cloud_output_tokens_total": 14
+      "cloud_output_tokens_total": 14,
+      "local_text_tokens_total": 7,
+      "cloud_text_tokens_total": 7
     },
     "boolq": {
       "n": 7,
@@ -227,7 +229,9 @@
           "stdev": 0.625
         }
       },
-      "cloud_output_tokens_total": 14
+      "cloud_output_tokens_total": 14,
+      "local_text_tokens_total": 7,
+      "cloud_text_tokens_total": 7
     },
     "gsm8k": {
       "n": 8,
@@ -332,7 +336,9 @@
           "stdev": 12.525
         }
       },
-      "cloud_output_tokens_total": 797
+      "cloud_output_tokens_total": 797,
+      "local_text_tokens_total": 1772,
+      "cloud_text_tokens_total": 804
     },
     "humaneval": {
       "n": 8,
@@ -439,7 +445,9 @@
           "stdev": 18.065
         }
       },
-      "cloud_output_tokens_total": 1313
+      "cloud_output_tokens_total": 1313,
+      "local_text_tokens_total": 2037,
+      "cloud_text_tokens_total": 1427
     },
     "mbpp": {
       "n": 8,
@@ -455,29 +463,29 @@
       },
       "cloud": {
         "n": 8,
-        "correct": 2,
-        "accuracy": 0.25,
+        "correct": 7,
+        "accuracy": 0.875,
         "accuracy_ci95": [
-          0.0715,
-          0.5907
+          0.5291,
+          0.9776
         ]
       },
       "hybrid": {
         "n": 8,
-        "correct": 2,
-        "accuracy": 0.25,
+        "correct": 7,
+        "accuracy": 0.875,
         "accuracy_ci95": [
-          0.0715,
-          0.5907
+          0.5291,
+          0.9776
         ]
       },
       "oracle": {
         "n": 8,
-        "correct": 4,
-        "accuracy": 0.5,
+        "correct": 7,
+        "accuracy": 0.875,
         "accuracy_ci95": [
-          0.2152,
-          0.7848
+          0.5291,
+          0.9776
         ]
       },
       "routes": {
@@ -544,7 +552,9 @@
           "stdev": 14.916
         }
       },
-      "cloud_output_tokens_total": 513
+      "cloud_output_tokens_total": 513,
+      "local_text_tokens_total": 2725,
+      "cloud_text_tokens_total": 565
     },
     "mmlu": {
       "n": 8,
@@ -649,7 +659,9 @@
           "stdev": 0.672
         }
       },
-      "cloud_output_tokens_total": 16
+      "cloud_output_tokens_total": 16,
+      "local_text_tokens_total": 8,
+      "cloud_text_tokens_total": 8
     }
   },
   "comparisons": [
@@ -713,14 +725,14 @@
       "task": "mbpp",
       "n": 8,
       "hybrid_vs_local": {
-        "hybrid_only_correct": 0,
-        "local_only_correct": 2,
-        "p_value": 0.5
+        "hybrid_only_correct": 3,
+        "local_only_correct": 0,
+        "p_value": 0.25
       },
       "cloud_vs_local": {
-        "cloud_only_correct": 0,
-        "local_only_correct": 2,
-        "p_value": 0.5
+        "cloud_only_correct": 3,
+        "local_only_correct": 0,
+        "p_value": 0.25
       }
     },
     {
@@ -785,13 +797,13 @@
     },
     "mbpp": {
       "n": 8,
-      "n_disagreements": 2,
-      "disagreement_rate": 0.25,
-      "hybrid_accuracy": 0.25,
-      "oracle_accuracy": 0.5,
+      "n_disagreements": 3,
+      "disagreement_rate": 0.375,
+      "hybrid_accuracy": 0.875,
+      "oracle_accuracy": 0.875,
       "local_accuracy": 0.5,
-      "cloud_accuracy": 0.25,
-      "oracle_gap_captured": null,
+      "cloud_accuracy": 0.875,
+      "oracle_gap_captured": 1.0,
       "router_vs_cloud": 0.0
     },
     "mmlu": {
@@ -811,6 +823,15 @@
     "api_calls_made": 0,
     "items_skipped_existing": 46,
     "budget": 1000000000,
-    "peak_rss_mb": 916.8
+    "peak_rss_mb": 509.4
+  },
+  "output_tokens_text": {
+    "local": 6556,
+    "cloud": 2818,
+    "hybrid": 3308
+  },
+  "output_tokens_reported": {
+    "local": 6997,
+    "cloud": 2667
   }
 }

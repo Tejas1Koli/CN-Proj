@@ -114,6 +114,6 @@ CODE_MEMORY_LIMIT_BYTES = 2 * 1024**3  # 2 GiB
 
 MODEL_LABELS = {
     "local": "Local only\nGemma 4 E2B (LiteRT-LM, Metal)",
-    "cloud": "Cloud only\nNemotron-3-Ultra (OpenRouter)",
+    "cloud": "Cloud only\nNemotron-3-Ultra (NVIDIA)",
     "hybrid": "Hybrid\nLaya router -> local/cloud",
 }
